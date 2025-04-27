@@ -1,0 +1,25 @@
+{{ define "schools-page" }} 
+
+    {{ template "header" "schools" }}
+
+    <link href="/static/css/schools/schools.css" rel="stylesheet">
+    <main>
+     <h1>Schools</h1>
+    
+     <section id="schools-list">
+        <ul  hx-boost="true">
+            {{ range .}}
+            <li key="{{.ID}}" >
+                <a href="/schools/{{ .Code }}" title="{{ .Name }}">
+                    {{ .Name }}
+                </a>
+            </li>
+            {{ end}}
+        </ul>
+
+    </section>
+
+    </main>
+
+    {{ template "footer" . }}
+{{ end }}

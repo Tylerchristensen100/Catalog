@@ -1,0 +1,113 @@
+{{ define "programs-page" }}
+
+{{ template "header" "programs" }}
+<link href="/static/css/programs/programs.css" rel="stylesheet">
+<main>
+    <header id="programs-header">
+        <h1>Programs</h1>
+        <div id="search">
+            <input type="text" placeholder="Search for a program">
+            <ul id="autocomplete"></ul>
+        </div>
+    </header>
+
+
+    <aside data-open="false">
+        <button id="filter-accordion" aria-label="Filters">Filters</button>
+        <section id="degree">
+            <h4>Degree</h4>
+            <div>
+                <input type="checkbox" id="bachelors" name="bachelors" value="Bachelor" checked="true">
+                <label for="bachelors">Bachelors</label>
+            </div>
+            <div>
+                <input type="checkbox" id="associates" name="associates" value="Associate" checked="true">
+                <label for="associates">Associates</label>
+            </div>
+            <div>
+                <input type="checkbox" id="masters" name="masters" value="Master" checked="true">
+                <label for="masters">Masters</label>
+            </div>
+            <div>
+                <input type="checkbox" id="certprof" name="certificate of proficiency" value="Certificate"
+                    checked="true">
+                <label for="certprof">Certificate of Proficiency</label>
+            </div>
+        </section>
+
+        <section id="school">
+            <h4>School</h4>
+            <div>
+                <input type="checkbox" id="cet" name="cet" value="cet" checked="true">
+                <label for=""> Smith College of Engineering and Technology
+                </label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="chss" name="chss" value="chss" checked="true">
+                <label for="">College of Humanities and Social Sciences
+                </label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="wsb" name="wb" value="wb" checked="true">
+                <label for="">Woodbury School of Business
+                </label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="cos" name="cos" value="cos" checked="true">
+                <label for="">College of Science
+                </label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="soa" name="soa" value="soa" checked="true">
+                <label for="soa">School of the Arts
+                </label>
+            </div>
+            <div>
+                <input type="checkbox" id="soe" name="soe" value="soe" checked="true">
+                <label for="soe">School of Education
+                </label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="chps" name="chps" value="chps" checked="true">
+                <label for="chps">College of Health and Public Service
+                </label>
+            </div>
+        </section>
+    </aside>
+
+    <section id="programs-list">
+        <ul hx-boost="true">
+            {{ $previousFirstLetter := "" }}
+            {{ range .}}
+
+            {{ $firstLetter := index .Name 0 | printf "%c" }}
+            {{ if ne $previousFirstLetter $firstLetter }}
+            {{ if ne $previousFirstLetter "" }}
+            {{ end }}
+            <h3>{{ $firstLetter }}</h3>
+            {{ $previousFirstLetter = $firstLetter }}
+            {{ end }}
+
+            <li key="{{.ID}}" class="program" data-major-code="{{.MajorCode}}" data-grad-level="{{.GradLevel.Level}}"
+                data-program-type="{{.ProgramType}}" data-school="{{.School.Code}}" data-online="{{.Online}}">
+                <a href="/programs/{{.Name}}" title="{{.Name}}">
+                    {{.Name}}
+                </a>
+            </li>
+            {{ end}}
+        </ul>
+
+    </section>
+    <script>
+        window.programs = {{ .}};
+    </script>
+    <script src="/static/js/programs/programs.js"></script>
+</main>
+
+{{ template "footer" . }}
+{{ end }}

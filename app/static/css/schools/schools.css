@@ -1,0 +1,13 @@
+main {
+
+
+    ul {
+        list-style-type: none;
+        margin-inline: auto;
+
+        li {
+            font-size: var(--font-size);
+            margin-block: 5px;
+        }
+    }
+}

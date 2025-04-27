@@ -1,0 +1,13 @@
+.stats {
+    h3 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    span {
+        display: block;
+        font-size: 1.4rem;
+        color: #666;
+        text-align: center;
+    }
+}

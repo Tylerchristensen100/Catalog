@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+:root {
+    --color-primary: #275D38;
+    --color-on-primary: #fff;
+    --color-primary-hover: #00843d;
+    --color-secondary: #78be1f;
+    --color-on-secondary: #020202;
+
+    --color-primary-active: #09964a;
+    --color-primary-text: #fff;
+    --color-primary--hover-text: #f6f6f6;
+
+    --color-background: #F5F5F5;
+    --color-on-background: var(--color-text);
+
+    --color-text: #333333;
+    --color-on-text: #f6f6f7;
+    --color-border: #434344;
+    --color-on-border: #f6f6f7;
+
+    --color-error: #bd1212;
+    --color-on-error: #fafafa;
+    --color-warning: #f09526;
+    --color-on-warning: #333333;
+
+    --color-success: #74e100;
+    --color-on-success: var(--color-text);
+
+    --color-info: #00acf0;
+    --color-on-info: var(--color-text);
+
+    --nav-background-color: var(--color-primary);
+    --nav-on-background-color: #fff;
+
+
+    --color-link: var(--color-primary);
+    --color-on-link: #fb8b40;
+
+    --color-disabled: #7c7c81;
+    --color-on-disabled: #020202;
+    
+
+    --text-size: 16px;
+    --text-line-height: 1.5;
+    --font-family: "Roboto Condensed", serif;
+    --font-family-heading: "Roboto Mono", serif;
+
+
+    --border-radius: 4px;
+    --border-width: 1px;
+
+    --shadow-color: 0px 0px 10px #00000029;
+}

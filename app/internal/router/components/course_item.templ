@@ -1,0 +1,13 @@
+package components
+
+import (
+	"catalog.tylerChristensen/internal/models"
+	"strconv"
+)
+
+templ CourseItem(course models.Course, i int) {
+	<li key={ strconv.Itoa(i) }>
+		{ course.Name } { course.MajorCode } { course.Code }
+		{ strconv.Itoa(int(course.CreditHours)) }
+	</li>
+}

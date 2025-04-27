@@ -1,0 +1,39 @@
+.accordion-control {
+    margin: 0 auto;
+    max-width: 800px;
+    list-style: none;
+    width: 100%;
+  
+  
+    .mantine-Accordion-label {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  
+  
+  .accordion_title_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3c3c3c;
+  }
+  
+  
+  .action-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #3c3c3c;
+    cursor: pointer;
+  }

@@ -1,0 +1,135 @@
+@import url(../core/vars.css);
+
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --button-hover-color: var(--color-primary-hover);
+  --mantine-primary-color: var(--color-primary)!important;
+
+  --mantine-primary-color-filled: var(--color-primary)!important;
+  --mantine-primary-color-filled-hover: color-mix(in srgb, var(--color-primary) 10%, black) !important;
+  --mantine-primary-color-light: color-mix(in srgb, var(--color-primary) 90%, white) !important;
+
+  --mantine-font-family: var(--font-family) !important;
+  --mantine-font-family-headings: var(--font-family-heading) !important;
+
+  --mantine-radius-default: var(border-radius) !important;
+  --mantine-radius-xs: calc(var(border-radius) / 4);
+  --mantine-radius-sm: calc(var(border-radius) / 2);
+  --mantine-radius-lg: calc(var(border-radius) * 2);
+  --mantine-radius-xl: calc(var(border-radius) * 4);
+
+
+  --button-color: var(--color-primary)!important;
+  --button-hover: var(--color-primary-hover)!important;
+  --button-bd: var(--color-primary)!important;
+  
+   --mantine-primary-color-filled:var(--color-primary) !important;
+  --mantine-color-anchor: var(--color-primary) !important;
+
+
+  --mantine-color-blue-0: var(--color-primary);
+  --mantine-color-blue-1: var(--color-primary);
+  --mantine-color-blue-2: var(--color-primary);
+  --mantine-color-blue-3: var(--color-primary);
+  --mantine-color-blue-4: var(--color-primary);
+  --mantine-color-blue-5: var(--color-primary);
+  --mantine-color-blue-6: var(--color-primary);
+  --mantine-color-blue-7: var(--color-primary);
+  --mantine-color-blue-8: var(--color-primary);
+  --mantine-color-blue-9: var(--color-primary);
+  --mantine-color-blue-filled: var(--color-primary);
+  --mantine-color-blue-filled-hover: color-mix(in srgb, var(--color-primary) 10%, black) !important;
+  --mantine-color-blue-light: color-mix(in srgb, var(--color-primary) 90%, white) !important;
+  --mantine-color-blue-light-hover: color-mix(in srgb, var(--color-primary) 80%, white) !important;
+  --mantine-color-blue-light-color: var(--color-primary) !important;
+  --mantine-color-blue-outline: var(--color-primary) !important;
+  --mantine-color-blue-outline-hover: color-mix(in srgb, var(--color-primary) 10%, black) !important;
+/* 
+
+
+  --mantine-primary-color-0: var(--mantine-color-blue-0);
+  --mantine-primary-color-1: var(--mantine-color-blue-1);
+  --mantine-primary-color-2: var(--mantine-color-blue-2);
+  --mantine-primary-color-3: var(--mantine-color-blue-3);
+  --mantine-primary-color-4: var(--mantine-color-blue-4);
+  --mantine-primary-color-5: var(--mantine-color-blue-5);
+  --mantine-primary-color-6: var(--mantine-color-blue-6);
+  --mantine-primary-color-7: var(--mantine-color-blue-7);
+  --mantine-primary-color-8: var(--mantine-color-blue-8);
+  --mantine-primary-color-9: var(--mantine-color-blue-9); */
+}
+
+
+a {
+  font-weight: 500;
+  color: #ebebeb;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-primary);
+}
+
+body {
+  margin: 0;
+  /* display: flex; */
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-primary-hover);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  /* border-color: #646cff; */
+  border-color: var(--color-primary);
+
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+svg[data-prefix] {
+  margin-inline: 5px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color:  var(--color-primary-hover);
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

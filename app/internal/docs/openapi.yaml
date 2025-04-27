@@ -1,0 +1,162 @@
+openapi: "3.0.3"
+info:
+  title: Catalog API's
+  description: "API's to get Program and Course data associated with the catalog"
+  contact:
+    name: Tyler Christensen
+    url: https://freethegnomes.org
+    email: tylerc@uvu.edu
+  version: "1.0"
+servers:
+  - url: https://capstone.freethegnomes.org/api/
+  - url: "http://localhost:3000/api/"
+paths:
+  /programs:
+    parameters:
+    get:
+      tags:
+        - Programs
+      summary: List of programs
+      description: Returns a list of all the programs
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error
+
+  /courses:
+    parameters:
+    get:
+      tags:
+        - Courses
+      summary: List of courses
+      description: Returns a list of all the courses
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error
+  /cips:
+    parameters:
+    get:
+      tags:
+        - Cip
+      summary: List of CIP's
+      description: Returns a list of all the CIP's
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error
+
+  /admin/programs:
+    parameters:
+    get:
+      tags:
+        - Admin
+        - Programs
+      summary: List all programs
+      description: The same as the public API
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error
+
+    post:
+      tags:
+        - Admin
+        - Programs
+      summary: Create a Program
+      description: Creates a Program listing
+      responses:
+        "201":
+          description: created
+        "500":
+          description: server error
+
+    put:
+      tags:
+        - Admin
+        - Programs
+      summary: Update a Program
+      description: Updates a program listing
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error
+
+  /admin/courses:
+    parameters:
+    get:
+      tags:
+        - Admin
+        - Courses
+      summary: Lists the courses
+      description: Same as the public API
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error
+    post:
+      tags:
+        - Admin
+        - Courses
+      summary: Create a Course
+      description: Creates a Course Listing
+      responses:
+        "201":
+          description: created
+        "500":
+          description: server error
+
+    put:
+      tags:
+        - Admin
+        - Courses
+      summary: Update a Course
+      description: Updates a Course listing
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error
+
+  /admin/cip:
+    parameters:
+    get:
+      tags:
+        - Admin
+        - Cip
+      summary: Lists the Cip's
+      description: Same as the public API
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error
+    post:
+      tags:
+        - Admin
+        - Cip
+      summary: Create a CIP
+      description: Creates a CIP
+      responses:
+        "201":
+          description: created
+        "500":
+          description: server error
+
+    put:
+      tags:
+        - Admin
+        - Cip
+      summary: Update a CIP
+      description: Updates a CIP
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: server error

@@ -1,0 +1,49 @@
+{{ define "courses-page" }}
+
+{{ template "header" "courses" }}
+<link href="/static/css/courses/courses.css" rel="stylesheet">
+<main>
+    <header id="courses-header">
+        <h1>Courses</h1>
+        <div id="search">
+            <input type="text" placeholder="Search for a course">
+            <ul id="autocomplete"></ul>
+        </div>
+    </header>
+
+    <aside data-open="false">
+        <button id="filter-accordion" aria-label="Filters">Filters</button>
+        <section id="course-filters"></section>
+    </aside>
+
+    <section id="courses-list">
+        <ul hx-boost="true">
+            {{ $previousMajorCode := "" }}
+
+            {{ range .}}
+
+            {{ if ne $previousMajorCode .MajorCode }}
+            {{ if ne $previousMajorCode "" }}
+            {{ end }}
+            <h3 data-major-code="{{.MajorCode}}">{{ .MajorCode }}</h3>
+            {{ $previousMajorCode = .MajorCode }}
+            {{ end }}
+
+
+            <li key="{{.ID}}" class="course" data-major-code="{{.MajorCode}}" data-code="{{.Code}}"
+                data-credit-hours="{{.CreditHours}}">
+                <a href="/courses/{{.MajorCode}}-{{.Code}}" title="{{.Name}}">
+                    {{.MajorCode}} - {{.Code}} | {{.Name}}
+                </a>
+            </li>
+            {{ end}}
+        </ul>
+    </section>
+    <script>
+        window.courses = {{ .}};
+    </script>
+    <script src="/static/js/courses/courses.js"></script>
+</main>
+
+{{ template "footer" . }}
+{{ end }}

@@ -1,0 +1,63 @@
+services:
+  database:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    env_file: ".env"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+    networks:
+      - internal-network
+
+  go-app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    env_file: ".env"
+    environment:
+      - DEV=true
+
+    networks:
+      - internal-network
+    develop:
+      watch:
+        - action: rebuild
+          path: ./app
+          target: /app
+          ignore:
+            - go.mod
+            - go.sum
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3100:80"
+    depends_on:
+      - go-app
+      - database
+    networks:
+      - internal-network
+    restart: unless-stopped
+    develop:
+      watch:
+      - action: rebuild
+        path: .
+        target: /app
+        ignore:
+          - Dockerfile
+          - docker-compose.yml
+          - db
+          - app
+
+
+networks:
+  internal-network:
+    driver: bridge

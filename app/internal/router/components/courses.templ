@@ -1,0 +1,11 @@
+package components
+
+import "catalog.tylerChristensen/internal/models"
+
+templ Courses(courses []models.Course) {
+    <ul>
+    for i, course := range courses {
+        @CourseItem(course, i)
+    }
+    </ul>
+}

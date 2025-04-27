@@ -1,0 +1,49 @@
+{{ define "header" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="icon" type="image/svg+xml" href="/static/assets/img/logo.svg" />
+    <link rel="stylesheet" href="/static/css/vars.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/global.css" type="text/css">
+    <script src="https://kit.fontawesome.com/6b7f8ffec1.js" crossorigin="anonymous" defer></script>
+
+</head>
+
+<body data-breadcrumb="{{ . }}">
+    <header id="global-header">
+        <div>
+            <div id="logo">
+                <a href="/" title="Home" id="home-link">
+                    <figure>
+                        <img src="/static/assets/img/logo.svg" alt="Catalog Logo">
+                    </figure>
+                    <h1>Catalog</h1>
+                </a>
+            </div>
+
+
+            <nav id="nav" data-open="false">
+                <button id="mobile-nav" aria-label="Open Nav"><i class="fa-solid fa-bars"></i></button>
+
+                <ul hx-boost="true">
+                    <li><a href="/programs" title="programs" data-active="false">Programs</a></li>
+                    <li><a href="/courses" title="courses" data-active="false">Courses</a></li>
+                    <li><a href="/schools" title="Colleges and Schools" data-active="false">Colleges & Schools</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <script src="/static/js/global/nav.js" defer></script>
+
+        <ol id="breadcrumb"></ol>
+
+        <script>
+            window.activePage = "{{ . }}";
+        </script>
+    </header>
+    {{ end }}

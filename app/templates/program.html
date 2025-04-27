@@ -1,0 +1,24 @@
+{{ define "program-page" }}
+
+{{ template "header" .Name }}
+<link href="/static/css/programs/programs.css" rel="stylesheet">
+<main key="{{ .ID }}" class="program-page">
+    <h1>{{ .Name }}</h1>
+    <section>
+
+        <div class="locations">
+            <p><strong>Online:</strong> {{ if gt .Online 0 }}Yes{{ else }}No{{ end }}</p>
+            <p><strong>On Campus:</strong> {{ if gt .Campus 0 }}Yes{{ else }}No{{ end }}</p>
+        </div>
+
+        <p>{{.Description}}</p>
+    </section>
+
+    <script>
+        window.program = {{ .}};
+    </script>
+</main>
+
+{{ template "footer" . }}
+
+{{ end }}

@@ -1,0 +1,12 @@
+package components
+
+import (
+	"catalog.tylerChristensen/internal/models"
+	"strconv"
+)
+
+templ ProgramItem(program models.Program, i int) {
+	<li key={ strconv.Itoa(i) }>
+		{ program.Name }
+	</li>
+}

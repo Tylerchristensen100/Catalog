@@ -1,0 +1,28 @@
+.course {
+    
+    margin: 0 auto;
+    max-width: 800px;
+    list-style: none;
+  
+  
+    .accordion {
+      width: 100%;
+    }
+  
+    
+  
+    
+  }
+  
+  .mantine-Accordion-label {
+      display: flex;
+      flex-direction: row;
+      justify-content:space-between;
+  }
+  
+  .control  {
+      display: flex;
+      flex-direction: row;
+      justify-content:space-between;
+     
+  }

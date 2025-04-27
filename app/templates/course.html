@@ -1,0 +1,22 @@
+{{ define "course-page" }}
+
+{{ template "header" .Name }}
+<link href="/static/css/courses/courses.css" rel="stylesheet">
+<main key="{{ .ID }}" class="course-page">
+    <h1><strong>{{.MajorCode}} {{ .Code }}</strong> - {{ .Name }}</h1>
+    <section>
+        <p class="credit-hours"><strong>Credit Hours:</strong> {{.CreditHours}}</p>
+
+        <p class="prerequisites"><strong>Prerequisites:</strong> {{.Prerequisites}}</p>
+
+        <p>{{.Description}}</p>
+    </section>
+
+    <script>
+        window.course = {{ .}};
+    </script>
+</main>
+
+{{ template "footer" . }}
+
+{{ end }}

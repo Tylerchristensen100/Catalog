@@ -1,0 +1,12 @@
+package components
+
+import "catalog.tylerChristensen/internal/models"
+
+
+templ Programs(programs []models.Program) {
+    <ul>
+        for i, p := range programs {
+            @ProgramItem(p, i)
+        }
+    </ul>
+}

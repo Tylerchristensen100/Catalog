@@ -1,0 +1,131 @@
+main {
+    #programs-header {
+        grid-area: title;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "search";
+        grid-template-rows: 1fr;
+        align-items: center;
+
+        margin-block: 10px;
+
+
+        h1 {
+            grid-area: title;
+            margin-inline-start: 2rem;
+        }
+    }
+
+    aside {
+        margin-inline: auto;
+        width: 100%;
+        box-shadow: var(--box-shadow);
+        background-color: #fff;
+
+        &[data-open="false"] section {
+            display: none;
+        }
+
+        &[data-open="true"] {
+            section {
+                display: block;
+            }
+
+            #filter-accordion:after {
+                rotate: 180deg;
+            }
+        }
+
+        #filter-accordion {
+            display: flex;
+            justify-content: space-between;
+            font-family: "Rajdhani", sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-primary);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px 20px;
+            margin-inline: auto;
+
+            &:after {
+                font-family: "Font Awesome 6 Free";
+                content: "\f078";
+                font-weight: 900;
+            }
+        }
+    }
+
+
+
+
+    #programs-list {
+        ul {
+            list-style-type: none;
+
+            li {
+                font-size: var(--font-size);
+                margin-block: 5px;
+            }
+        }
+    }
+}
+
+
+main.program-page {
+    margin-inline: 4rem;
+
+    .locations {
+        font-size: 18px;
+        padding: 10px;
+        border-radius: var(--border-radius);
+        margin: 5px;
+        box-shadow: var(--box-shadow);
+        width: 250px;
+        margin-block-start: 15px;
+        margin-block-end: 30px
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        #programs-header {
+            grid-template-columns: 370px auto;
+            grid-template-areas:
+                "title search";
+        }
+
+        
+        aside {
+            #filter-accordion {
+                display: none;
+            }
+
+            &[data-open="false"] section, &[data-open="true"] section  {
+                display: block;
+            }
+
+            background-color: unset;
+            box-shadow: unset;
+
+            h4 {
+                text-align: right;
+            }
+
+            div {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-start;
+
+                label {
+                    display: inline-block;
+                    text-align:right;
+                }
+            }
+        }
+    }
+}
