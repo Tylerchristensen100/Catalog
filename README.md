@@ -23,7 +23,6 @@
         <li><a href="#guide">Guide</a></li>
       </ul>
     </li>
-    <li><a href="#documentation">Documentation</a>
     <ul>
         <li><a href="#erd">ERD Diagram</a></li>
     </ul>
@@ -59,7 +58,7 @@ This is the University's official Program Catalog, designed to inform students a
 #### Remote
 
 - Frontend is hosted at https://capstone.freethegnomes.org/
-- Admin dashboard is https://admincatalog.freethegnomes.org/
+- Admin dashboard is [https://admincatalog.freethegnomes.org/](https://admin_capstone.freethegnomes.org/)
 - API is hosted at https://capstone.freethegnomes.org/api/
 
 ---
@@ -98,24 +97,6 @@ To deploy this application, follow these steps:
     *(The `-d` flag runs the containers in detached mode.)*
 
 
-
-
-
-
-## Documentation
-
-- [Elevator Pitch](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/ElevatorPitch.md)
-- [Persona's](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/Persona.md)
-- [Functional & Non-Functional Requirements](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/Requirements.md)
-- [Figma Design](https://www.figma.com/design/JBGMxLb8ShdZwHB3B3NVgO/Catalog?node-id=0-1&t=P8GKWtSmVlMInwcz-1)
-- [Use Cases](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/UseCases.md)
-- [ERD Diagram](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/ERD.png)
-- [Sequence Diagrams](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/SequenceDiagram.md)
-- [JSON web API diagrams](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/API_responses.md)
-- [Stack](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/Stack.md)
-- [Testing Plan](https://github.com/Tylerchristensen100/CS4900/blob/main/documentation/TestingPlan.md)
-
----
 
 ### ERD
 
