@@ -1,4 +1,4 @@
-FROM node:22-alpine AS build-react
+FROM node:24-alpine AS build-react
 
 WORKDIR /app
 
